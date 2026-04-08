@@ -1,8 +1,3 @@
-Got you bro 🔥 — ye proper VS Code ready README.md hai, bas copy-paste kar dena (no changes needed):
-
-⸻
-
-
 # 🩺 Diabetes Prediction System (ML Lab Project)
 
 ## 📌 Overview
