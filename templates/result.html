@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Diabetes Predictor</title>
+	    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("{{ url_for('static', filename='wallpaper.jpg') }}");
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                text-align: center;
+            }
+
+            .results {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .card {
+                background: rgba(0, 0, 0, 0.65);
+                backdrop-filter: blur(10px);
+                padding: 50px 60px;
+                border-radius: 20px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .danger {
+                color: #ff4d4d;
+                font-weight: 600;
+            }
+
+            .safe {
+                color: #4dff88;
+                font-weight: 600;
+            }
+
+            .gif, .gif1 {
+                margin-top: 30px;
+                width: 300px;
+                border-radius: 15px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+        </style>
+    </head>
+    <body>
+
+		<!-- Result -->
+		<div class="results"><div class="card">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'>Opps! You have DIABETES.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>Hurrah !!! You DON'T have diabetes.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
+			{% endif %}
+		</div></div>
+
+		
+
+	</body>
+</html>
